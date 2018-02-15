@@ -9,9 +9,12 @@ public class Document {
     private ArrayList<String> usings;
     private String temp; // For Basic Temp data Holding
     private Integer fi,li; // For Basic Temp Index Storing
-    public Document(File file){
+
+
+    public Document(File file) throws IOException {
         this.docFile = file;
         usings = new ArrayList<>();
+        assignRoot();
     }
 
     public ArrayList<String> getUsings() throws IOException {
@@ -29,9 +32,21 @@ public class Document {
                 usings.add(temp.substring(fi,li).trim());
             }
         }
+
+        reader.close();
         return usings;
     }
+
+    private void assignRoot() throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(docFile));
+        while (!(temp = reader.readLine()).contains("commander")){
+            // egnored because it will assign root tag to temp variable and we want this
+        }
+        temp = temp.substring(temp.indexOf("<")+1,temp.indexOf(" ")).trim();
+        root = new Element(temp);
+    }
+
     public Element getRoot(){
-        return new Element();
+        return root;
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <?Using View,PushButton,ImageView,VideoPlayer,MusicPlayer,TextInput,HWrapper,VWrapper?>
 
-<View id="root" height="800" width="600" styleSheet="@style.css" commander="anon.grp.Main">
+<View id="root" height="800" width="600" styleSheet="@style.css" commander="anon.grp.Main" oriel="<root">
     <ScrollBox id="scrollBox" width="match_parent" height="match_parent" class="scroller">
         <VWrapper>
             <ImageView src="@../../../pic.jpg" width="100px" height="100px" viewType="circle"/>
@@ -14,6 +14,9 @@
         </VWrapper>
         <VWrapper>
             <ImageView src="@../../../pic4.jpg" width="100px" height="100px" viewType="circle"/>
+        </VWrapper>
+        <VWrapper>
+            <ImageView src="https://anon.org/pic5.jpg" width="100px" height="100px" viewType="circle"/>
         </VWrapper>
     </ScrollBox>
     <View>
